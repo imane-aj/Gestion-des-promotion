@@ -1,14 +1,3 @@
-<?php 
-    require_once("../businessLayer/promoManagement.php");
-    
-    if(!empty($_POST)){
-      $validation = new promoManagement($_POST);
-      $validation->insert();
-    }
-    // require_once('db.php');
-    // $db = new database();
-    // $db->connect_db();
-?>
 
 <!doctype html>
 <html lang="en">
@@ -22,26 +11,6 @@
         margin-top: 3em;
         text-align:center;
       }
-      .hero .input-group{
-        margin-top:3em;
-      }
-      .hero h4{
-        color: #939090;
-        font-weight: 400;
-        margin-right: 1em;
-      }
-      .hero .input-group label, .hero .input-group input{
-        margin-right: 1em;
-      }
-      .hero .input-group button{
-        font-size: 1.2em;
-        background: unset;
-        border: unset;
-        color: #22D57B;
-      }
-      input{
-        border-color: #dedcdc;
-      }
     </style>
   </head>
   <body>
@@ -49,7 +18,8 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="hero">
-            <h4>Ajouter promotion</h4>
+            <button>Ajouter promotion</button> 
+            <button>Chercher Promotion</button> 
                 <form action="index.php" method="POST">
                     <div class="input-group">
                       <label for="promo">Nom de la promotion</label>
