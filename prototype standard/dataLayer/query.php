@@ -57,6 +57,28 @@ require('db.php');
             }
             return $promoData_array;
         }
+
+        public function edit($id){
+            $edit = "SELECT * FROM promotion WHERE id= $id";
+            $queryConnect = mysqli_query($this->getConnect(), $edit);
+            $editData = mysqli_fetch_assoc($queryConnect);
+
+            $editPromo = new promotion();
+            $editPromo->setId($editData['id']);
+            $editPromo->setPromo($editData['promo']);
+
+            return $editPromo;
+        }
+
+        public function update($id, $name){
+            $update = "UPDATE promotion SET promo = '$name' WHERE id =$id";
+            mysqli_query($this->getConnect(), $update);
+        }
+
+        public function delete($id){
+            $delete = "DELETE FROM promotion WHERE id = $id";
+            mysqli_query($this->getConnect(), $delete);
+        }
     }       
 
 ?>

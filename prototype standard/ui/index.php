@@ -2,6 +2,14 @@
 require_once("../businessLayer/promoManagement.php");
   $promoManagement = new promoManagement( $_POST);
   $data = $promoManagement->getAll();
+
+  if(isset($_GET['id'])){
+    $id =$_GET['id'];
+    $promoManagement->deletePromo($id);
+
+    header('Location: index.php');
+}
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -52,8 +60,8 @@ require_once("../businessLayer/promoManagement.php");
     <?php foreach($data as $value){ ?>
     <tr>
       <th scope="row"><?php echo $value->getPromo() ?></th>
-      <td><button class="btn btn-success">Update</button></td>
-      <td><button class="btn btn-danger">Danger</button></td>
+      <td><a class="btn btn-success" href="update.php?id=<?php echo $value->getId() ?>">Update</a></td>
+      <td><a class="btn btn-danger" href="index.php?id=<?php echo $value->getId() ?>" onclick="return confirm('Are you sure?')">Delete</a></td>
     </tr>
     <?php } ?>
   </tbody>

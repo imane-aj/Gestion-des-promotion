@@ -31,7 +31,7 @@ class promoManagement{
                 $promoAdd->setPromo($this->checkInput($this->data['promo']));
                 $promoQuery->insertPromoQuery($promoAdd);
  
-                header("Location: ajout.php");
+                header("Location: index.php");
                 echo "success";
             }
     }
@@ -41,5 +41,19 @@ class promoManagement{
         return $promo->getAllPromoQuery();
     }
   
+    public function editPromo($id){
+        $promo = new promoQuery();
+        return $promo->edit($id);
+    }
+
+    public function updatePromo($id, $name){
+        $promo = new promoQuery();
+        return $promo->update($id, $name);
+    }
+
+    public function deletePromo($id){
+        $promo = new promoQuery();
+        return $promo->delete($id);
+    }
 }
 ?>

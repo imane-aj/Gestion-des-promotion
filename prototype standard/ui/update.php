@@ -1,10 +1,20 @@
 <?php 
     require_once("../businessLayer/promoManagement.php");
-    
-    if(!empty($_POST)){
-      $validation = new promoManagement($_POST);
-      $validation->insert();
+    $data = new promoManagement($_POST);
+    if(isset($_GET['id'])){
+        $value = $data->editPromo($_GET['id']);
     }
+    
+    if( !empty($_POST) ) {
+
+        $id= $_POST['Id'];
+        $name = $_POST["promo"];
+        
+       
+         $data->updatePromo($id,$name);
+        header("Location: index.php");
+    }
+    
 ?>
 
 <!doctype html>
@@ -46,11 +56,12 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="hero">
-            <h4>Ajouter promotion</h4>
-                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
+            <h4>Modfier promotion</h4>
+                <form action="" method="post">
                     <div class="input-group">
                       <label for="promo">Nom de la promotion</label>
-                      <input type="text" name="promo" id="promo">
+                      <input type="hidden" value=<?php echo $value->getId()?> name="Id" >  
+                      <input type="text" name="promo" id="promo" value=<?php echo $value->getPromo() ?>>
                       <button type="submit">Envoyer</button>
                     </div>
                 </form>
