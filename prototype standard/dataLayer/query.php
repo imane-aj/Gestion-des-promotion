@@ -41,6 +41,22 @@ require('db.php');
                 $res = "INSERT INTO promotion (promo) Values ('$promo')";
                 mysqli_query($this->getConnect(), $res);
         }
+
+        public function getAllPromoQuery(){
+            $getQuery = "SELECT * FROM promotion";
+            $sqlQuery = mysqli_query($this->getConnect(), $getQuery);
+            $promoData = mysqli_fetch_all($sqlQuery, MYSQLI_ASSOC);
+
+            $promoData_array = array();
+
+            foreach($promoData as $value){
+                $promo = new promotion;
+                $promo->setId($value['id']);
+                $promo->setPromo($value['promo']);
+                array_push($promoData_array, $promo);
+            }
+            return $promoData_array;
+        }
     }       
 
 ?>

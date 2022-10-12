@@ -35,6 +35,11 @@ class promoManagement{
                 echo "success";
             }
     }
+
+    public function getAll(){
+        $promo = new promoQuery();
+        return $promo->getAllPromoQuery();
+    }
   
 }
 ?>

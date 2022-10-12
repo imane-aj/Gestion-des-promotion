@@ -1,4 +1,8 @@
-
+<?php 
+require_once("../businessLayer/promoManagement.php");
+  $promoManagement = new promoManagement( $_POST);
+  $data = $promoManagement->getAll();
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -45,12 +49,13 @@
     </tr>
   </thead>
   <tbody>
+    <?php foreach($data as $value){ ?>
     <tr>
-      <th scope="row">sdlgkjslg</th>
+      <th scope="row"><?php echo $value->getPromo() ?></th>
       <td><button class="btn btn-success">Update</button></td>
       <td><button class="btn btn-danger">Danger</button></td>
     </tr>
-    <tr>
+    <?php } ?>
   </tbody>
 </table>
             </div>
