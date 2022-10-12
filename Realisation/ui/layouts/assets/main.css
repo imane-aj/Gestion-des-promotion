@@ -1,0 +1,87 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: #6b7ae04d;
+}
+.hero{
+  text-align: center;
+  background: #f9f9f9;
+  padding: 47px 33px;
+  margin-top: 5em;
+  box-shadow: 0px 1px 3px #c7c7c7;
+  
+}
+table thead{
+  background-color: #6b7ae04d;
+}
+.btn{
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: space-between;
+}
+/* .btn button{
+  border: unset;
+  border-radius: 7px;
+  padding: 11px 36px;
+} */
+.btn button:first-child{
+  background: #52c5d647;
+}
+table {
+    border-collapse: unset;
+}
+.fa-trash-can{
+  color:red;
+}
+.fa-pen-to-square{
+  color: green;
+  margin-right: 2em;
+}
+form input{
+  position: relative;
+}
+form .btnAbsolu{
+  position: absolute;
+  margin-left: 10em;
+  border: unset;
+  background:unset;
+}
+form button i{
+  color: #008000;
+}
+.btn a {
+  color: #6a6a6a;
+  text-decoration:none;
+}
+.btn a i{
+  border-radius: 50%;
+  border: 1px solid;
+  padding: 4px;
+  color: blue;
+}
+
+/* AJOUT && UPDATE */
+
+.hero .input-group{
+  margin-top:3em;
+}
+.hero h4{
+  color: #939090;
+  font-weight: 400;
+  margin-right: 1em;
+}
+.hero .input-group label, .hero .input-group input{
+  margin-right: 1em;
+}
+.hero .input-group button{
+  font-size: 1.2em;
+  background: unset;
+  border: unset;
+  color: #22D57B;
+}
+input{
+  border-color: #dedcdc;
+}
