@@ -26,7 +26,7 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="hero">
-                <form action="index.php" method="POST">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                     <div class="input-group mb-3">
                       <input type="text" class="form-control" name="promo" >
                       <input type="submit" class="add" value="submit" name="submit">
