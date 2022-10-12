@@ -79,6 +79,11 @@ require('db.php');
             $delete = "DELETE FROM promotion WHERE id = $id";
             mysqli_query($this->getConnect(), $delete);
         }
+        public function ajax(){
+            $input = $_POST['input'];
+            $query = "SELECT * FROM promotion WHERE promo LIKE '{$input}%'";
+            return mysqli_query($this->getConnect(), $query);
+        }
 
     }       
 

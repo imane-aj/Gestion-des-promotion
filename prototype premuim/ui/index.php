@@ -112,6 +112,29 @@ require("../businessLayer/promoManagement.php");
         </div>
       </div>
     </div>
+    <script>
+      $(document).ready(function(){
+        $("#search").keyup(function(){
+          var input = $(this).val();
+          if(input != " "){
+            // console.log($url)
+            $.ajax({
+              url: "../businessLayer/ajax.php",
+              method:"POST",
+              data:{input:input},
+
+              success:function(data){
+                $("#result").html(data);
+              }})
+            }else{
+                $("#result").css("display", "none");
+              }
+           
+          
+        })
+      })
+      
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
 </html>
