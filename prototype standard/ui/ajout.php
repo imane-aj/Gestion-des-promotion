@@ -50,7 +50,7 @@
         <div class="col-md-6">
           <div class="hero">
             <h4>Ajouter promotion</h4>
-                <form action="index.php" method="POST">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST">
                     <div class="input-group">
                       <label for="promo">Nom de la promotion</label>
                       <input type="text" name="promo" id="promo">

@@ -11,6 +11,19 @@
         margin-top: 3em;
         text-align:center;
       }
+      .btn{
+        margin-bottom: 3em;
+        display: flex;
+        justify-content: space-between;
+      }
+      .btn button{
+        border: unset;
+        border-radius: 7px;
+        padding: 11px 36px;
+      }
+      .btn button:first-child{
+        background: #52c5d647;
+      }
     </style>
   </head>
   <body>
@@ -18,15 +31,29 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="hero">
-            <button>Ajouter promotion</button> 
-            <button>Chercher Promotion</button> 
-                <form action="index.php" method="POST">
-                    <div class="input-group">
-                      <label for="promo">Nom de la promotion</label>
-                      <input type="text" name="promo" id="promo">
-                      <button type="submit">Envoyer</button>
-                    </div>
-                </form>
+            <div class="btn">
+              <button>Ajouter promotion</button> 
+              <button>Chercher Promotion</button> 
+            </div>
+            <div class="show">
+            <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Pormotion</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">sdlgkjslg</th>
+      <td><button class="btn btn-success">Update</button></td>
+      <td><button class="btn btn-danger">Danger</button></td>
+    </tr>
+    <tr>
+  </tbody>
+</table>
+            </div>
           </div>
         </div>
       </div>
