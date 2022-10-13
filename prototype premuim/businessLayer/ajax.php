@@ -1,7 +1,7 @@
 <?php
-require_once('../dataLayer/query.php');
+require_once('../dataAccessLayer/promotionDA.php');
 if(isset($_POST['input'])){
-    $ajax = new promoQuery();
+    $ajax = new promotionDA();
     $data = $ajax->ajax();
     if(mysqli_num_rows($data)>0){
         while($row = mysqli_fetch_assoc($data)){

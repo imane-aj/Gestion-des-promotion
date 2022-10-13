@@ -1,12 +1,12 @@
 <?php 
-require("../businessLayer/promoManagement.php");
+require("../businessLayer/promotionBLL.php");
 
-  $promoManagement = new promoManagement( $_POST);
-  $data = $promoManagement->getAll();
+  $promotionBLL = new promotionBLL( $_POST);
+  $data = $promotionBLL->getAll();
 
   if(isset($_GET['id'])){
     $id =$_GET['id'];
-    $promoManagement->deletePromo($id);
+    $promotionBLL->deletePromo($id);
 
     header('Location: index.php');
   }
