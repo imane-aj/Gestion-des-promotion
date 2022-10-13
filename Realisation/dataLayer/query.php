@@ -14,10 +14,10 @@ require('db.php');
         }
 
         public function getPromo(){
-            return $this->task;
+            return $this->promo;
         }
         public function setPromo($value){
-            $this->task = $value;
+            $this->promo = $value;
         }
     }
 

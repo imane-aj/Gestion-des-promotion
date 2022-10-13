@@ -55,21 +55,5 @@ class promoManagement{
         $promo = new promoQuery();
         return $promo->delete($id);
     }
-
-    // public function ajax(){
-    //     if(isset($_POST['input'])){
-    //         $ajax = new promoQuery();
-    //         $data = $ajax->ajax();
-    //         if(mysqli_num_rows($data)>0){
-    //             while($row = mysqli_fetch_assoc($data)){
-    //                 $name = $row['promo']
-    //                 
-    //             }
-    //         }else{
-    //             echo "<h3>no data found</h3>";
-    //         }
-    //     }
-        
-    // }  
 }
 ?>

@@ -1,27 +1,8 @@
 
 <?php 
 require('db.php');
-
-    class promotion {
-        private $id;
-        private $promo;
-
-        public function getId(){
-            return $this->id;
-        }
-        public function setId($value){
-            $this->id = $value;
-        }
-
-        public function getPromo(){
-            return $this->task;
-        }
-        public function setPromo($value){
-            $this->task = $value;
-        }
-    }
-
-    class promoQuery {
+require('promotion.php');
+    class promotionDA {
         private $con = null;
         public function getConnect(){
             $db = new database();

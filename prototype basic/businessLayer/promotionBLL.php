@@ -1,6 +1,7 @@
 <?php 
-require_once('../dataLayer/query.php');
-class promoManagement{
+require_once('../dataAccessLayer/promotionDA.php');
+require_once('../dataAccessLayer/promotion.php');
+class promotionBLL{
     private $data;
     private $errors = [];
     private static $fields = ['promo'];
@@ -27,7 +28,7 @@ class promoManagement{
             }
             else{
                 $promoAdd = new promotion();	
-                $promoQuery = new promoQuery();
+                $promoQuery = new promotionDA();
                 $promoAdd->setPromo($this->checkInput($this->data['promo']));
                 $promoQuery->insertPromoQuery($promoAdd);
  
