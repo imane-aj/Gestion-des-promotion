@@ -1,6 +1,6 @@
 <?php 
-require_once('../dataLayer/query.php');
-class promoManagement{
+require_once('../dataAccessLayer/promotionDA.php');
+class promotionBLL{
     private $data;
     private $errors = [];
     private static $fields = ['promo'];
@@ -27,7 +27,7 @@ class promoManagement{
             }
             else{
                 $promoAdd = new promotion();	
-                $promoQuery = new promoQuery();
+                $promoQuery = new promotionDA();
                 $promoAdd->setPromo($this->checkInput($this->data['promo']));
                 $promoQuery->insertPromoQuery($promoAdd);
  
@@ -37,22 +37,22 @@ class promoManagement{
     }
 
     public function getAll(){
-        $promo = new promoQuery();
+        $promo = new promotionDA();
         return $promo->getAllPromoQuery();
     }
   
     public function editPromo($id){
-        $promo = new promoQuery();
+        $promo = new promotionDA();
         return $promo->edit($id);
     }
 
     public function updatePromo($id, $name){
-        $promo = new promoQuery();
+        $promo = new promotionDA();
         return $promo->update($id, $name);
     }
 
     public function deletePromo($id){
-        $promo = new promoQuery();
+        $promo = new promotionDA();
         return $promo->delete($id);
     }
 }

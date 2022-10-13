@@ -1,6 +1,6 @@
 <?php 
-    require_once("../businessLayer/promoManagement.php");
-    $data = new promoManagement($_POST);
+    require_once("../businessLayer/promotionBLL.php");
+    $data = new promotionBLL($_POST);
     if(isset($_GET['id'])){
         $value = $data->editPromo($_GET['id']);
     }
