@@ -53,7 +53,7 @@ require("../businessLayer/promoManagement.php");
                 $.ajax({
                   url: "../businessLayer/ajax.php",
                   method:"POST",
-                  data:{object:input},
+                  data:{input:input},
 
                   success:function(data){
                     $("#result").html(data);

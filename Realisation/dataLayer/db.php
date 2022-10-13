@@ -4,7 +4,7 @@
         private $con         = null;
         private $db_name     = "gestion_promo";
         private $user        = "root";
-        private $db_pwd      = "root";
+        private $db_pwd      = "";
         private $server_name = "localhost";
 
         public function connect_db(){
