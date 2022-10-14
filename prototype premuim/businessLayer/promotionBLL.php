@@ -6,7 +6,6 @@ class promotionBLL{
         $promoQuery = new promotionDA();
         $promoAdd->setPromo(($_POST['promo']));
         $promoQuery->insertPromoQuery($promoAdd);
-        $this->isSuccess = true;
         header("Location: index.php");
     }
 
