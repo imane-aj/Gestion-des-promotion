@@ -28,7 +28,7 @@ require('promotion.php');
             $getQuery = "SELECT * FROM promotion";
             $sqlQuery = mysqli_query($this->getConnect(), $getQuery);
             $promoData = mysqli_fetch_all($sqlQuery, MYSQLI_ASSOC);
-            print_r( $promoData);
+            // print_r( $promoData);
             $promoData_array = array();
 
             foreach($promoData as $value){
