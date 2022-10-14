@@ -28,7 +28,7 @@ require('promotion.php');
             $getQuery = "SELECT * FROM promotion";
             $sqlQuery = mysqli_query($this->getConnect(), $getQuery);
             $promoData = mysqli_fetch_all($sqlQuery, MYSQLI_ASSOC);
-
+            print_r( $promoData);
             $promoData_array = array();
 
             foreach($promoData as $value){
@@ -62,7 +62,7 @@ require('promotion.php');
             mysqli_query($this->getConnect(), $delete);
         }
         public function ajax(){
-            $input = $_POST['input'];
+            $input = $_POST['key'];
             $query = "SELECT * FROM promotion WHERE promo LIKE '{$input}%'";
             return mysqli_query($this->getConnect(), $query);
         }

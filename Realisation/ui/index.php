@@ -1,6 +1,6 @@
 <?php 
 require("../businessLayer/promotionBLL.php");
-  $promotionBLL = new promotionBLL( $_POST);
+  $promotionBLL = new promotionBLL();
   $data = $promotionBLL->getAll();
   if(isset($_GET['id'])){
     $id =$_GET['id'];
@@ -53,7 +53,7 @@ require("../businessLayer/promotionBLL.php");
                 $.ajax({
                   url: "../businessLayer/ajax.php",
                   method:"POST",
-                  data:{input:input},
+                  data:{key:input},
 
                   success:function(data){
                     $("#result").html(data);

@@ -22,6 +22,9 @@ table thead{
   display: flex;
   justify-content: space-between;
 }
+table thead ,tbody{
+  text-align: center;
+}
 /* .btn button{
   border: unset;
   border-radius: 7px;

@@ -1,6 +1,6 @@
 <?php
 require_once('../dataAccessLayer/promotionDA.php');
-if(isset($_POST['input'])){
+if(isset($_POST['key'])){
     $ajax = new promotionDA();
     $data = $ajax->ajax();
     if(mysqli_num_rows($data)>0){

@@ -1,7 +1,7 @@
 <?php 
     require_once("../businessLayer/promotionBLL.php");
     if(!empty($_POST)){
-      $validation = new promotionBLL($_POST);
+      $validation = new promotionBLL();
       $validation->insert();
     }
     include('layouts/head.html');
