@@ -18,7 +18,7 @@ if(isset($_POST['key'])){
             <?php
         }
     }else{
-        echo "<h3>no data found</h3>";
+        echo "<h3>No data found</h3>";
     }
 }
     
