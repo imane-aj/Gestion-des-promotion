@@ -1,7 +1,7 @@
 <?php 
 require("../businessLayer/promotionBLL.php");
 
-  $promoBLL = new promotionBLL( $_POST);
+  $promoBLL = new promotionBLL();
   $data = $promoBLL->getAll();
 
   if(isset($_GET['id'])){
