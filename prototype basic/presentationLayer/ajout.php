@@ -2,12 +2,9 @@
     require_once("../businessLayer/promotionBLL.php");
     
     if(!empty($_POST)){
-      $validation = new promotionBLL($_POST);
-      $validation->insert();
+      $validation = new promotionBLL();
+      $validation->insert($promo);
     }
-    // require_once('db.php');
-    // $db = new database();
-    // $db->connect_db();
 ?>
 
 <!doctype html>
